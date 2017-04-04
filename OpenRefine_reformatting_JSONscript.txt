@@ -1,0 +1,75 @@
+[
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "isBlank(value)",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column 1",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column 1"
+        }
+      ]
+    }
+  },
+  {
+    "op": "core/transpose-rows-into-columns",
+    "description": "Transpose every 2 cells in column Column 1 into separate columns",
+    "columnName": "Column 1",
+    "rowCount": 2
+  },
+  {
+    "op": "core/transpose-rows-into-columns",
+    "description": "Transpose every 2 cells in column Column 1 2 into separate columns",
+    "columnName": "Column 1 2",
+    "rowCount": 2
+  },
+  {
+    "op": "core/column-removal",
+    "description": "Remove column Column 1 1",
+    "columnName": "Column 1 1"
+  },
+  {
+    "op": "core/row-removal",
+    "description": "Remove rows",
+    "engineConfig": {
+      "mode": "row-based",
+      "facets": [
+        {
+          "omitError": false,
+          "expression": "isBlank(value)",
+          "selectBlank": false,
+          "selection": [
+            {
+              "v": {
+                "v": true,
+                "l": "true"
+              }
+            }
+          ],
+          "selectError": false,
+          "invert": false,
+          "name": "Column 1 2 1",
+          "omitBlank": false,
+          "type": "list",
+          "columnName": "Column 1 2 1"
+        }
+      ]
+    }
+  }
+]
